@@ -1,0 +1,21 @@
+index
+
+%table
+  %tr
+    %td Id
+    %td Name 
+    %td Content 
+    %td Position 
+    %td Created At 
+    %td Updated At 
+    %td= link_to 'Add', new_page_path
+  - pages.each do |p|
+    %tr
+      %td= link_to p.id, page_path(p)
+      %td= p.name 
+      %td= p.content 
+      %td= p.position 
+      %td= p.created_at.strftime('%D / %r')
+      %td= p.updated_at.strftime('%D / %r')
+      %td= link_to 'Edit', edit_page_path(p)
+
